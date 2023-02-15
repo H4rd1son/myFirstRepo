@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Моё Приложение2</string>
-    <string name="hello_world">Привет Мир</string>
+    <string name="hello_world">Здесь будет ваш текст</string>
     <string name="button1">Минус</string>
     <string name="button2">Плюс</string>
     <string name="buttonReset">СБРОС</string>
+    <string name="button4">ВВОД</string>
 </resources>

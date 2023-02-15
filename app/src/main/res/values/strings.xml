@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">My Application2</string>
-    <string name="hello_world">Hello World</string>
+    <string name="hello_world">Here you text</string>
     <string name="button1">Minus</string>
     <string name="button2">Plus</string>
     <string name="buttonReset">RESET</string>
+    <string name="button4">ENTER</string>
 </resources>

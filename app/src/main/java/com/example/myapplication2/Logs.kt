@@ -13,5 +13,8 @@ class Logs {
     fun button3Log(v: View){
         Log.d("TAG", "ButtonReset was pressed")
     }
+    fun button4Log(v: View){
+        Log.d("TAG", "Button4 was pressed")
+    }
 }
 //аргументом у обработчика событий является переменная типа View
