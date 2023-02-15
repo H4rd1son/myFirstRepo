@@ -1,10 +1,12 @@
 package com.example.myapplication2
 
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
+import android.widget.EditText
 import android.widget.TextView
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -34,6 +36,12 @@ class MainActivity : AppCompatActivity() {
             a = 0
             textView.text = "нажат сброс: число равно = $a"
             funLogs.button3Log(button3)
+        }
+        val edText: EditText = findViewById(R.id.editText1)
+        val button4: View = findViewById(R.id.button4)
+        button4.setOnClickListener {
+            val text: String = edText.getText().toString()
+            textView.setText("$text $a")
         }
     }
 }
