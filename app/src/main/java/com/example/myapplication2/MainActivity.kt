@@ -41,8 +41,6 @@ class MainActivity : AppCompatActivity() {
             funLogs.button3Log(button3)
         }
         button4.setOnClickListener {
-//            val text: String = edText.getText().toString()
-//            textView.setText("$text $count")
             //AlertDialog
             val builderAlert = AlertDialog.Builder(this@MainActivity)
             builderAlert.setTitle("Заголовок")
