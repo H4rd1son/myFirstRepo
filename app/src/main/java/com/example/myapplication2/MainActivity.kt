@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 
 
 class MainActivity : AppCompatActivity() {
@@ -39,8 +41,24 @@ class MainActivity : AppCompatActivity() {
             funLogs.button3Log(button3)
         }
         button4.setOnClickListener {
-            val text: String = edText.getText().toString()
-            textView.setText("$text $count")
+//            val text: String = edText.getText().toString()
+//            textView.setText("$text $count")
+            //AlertDialog
+            val builderAlert = AlertDialog.Builder(this@MainActivity)
+            builderAlert.setTitle("Заголовок")
+            builderAlert.setMessage("При нажатии ДА текст запишется в поле ниже, при нажатии кнопки НЕТ вернется последнее число")
+            builderAlert.setPositiveButton("ДА"){dialog, which ->
+                val text: String = edText.getText().toString()
+                textView.setText("$text $count")
+            }
+            builderAlert.setNegativeButton("НЕТ"){dialog, which ->
+                textView.text = "последнее число = $count"
+            }
+            builderAlert.setNeutralButton("ОТМЕНА"){_,_ ->
+                Toast.makeText(applicationContext,"Диалог закрыт, нажата отмена",Toast.LENGTH_SHORT).show()
+            }
+            val dialog: AlertDialog = builderAlert.create()
+            dialog.show()
             funLogs.button4Log(button4)
         }
     }
