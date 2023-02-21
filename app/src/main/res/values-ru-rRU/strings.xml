@@ -6,4 +6,13 @@
     <string name="button2">Плюс</string>
     <string name="buttonReset">СБРОС</string>
     <string name="button4">ВВОД</string>
+    <string name="buttonNextActivity">2 окно</string>
+    <string name="editText1">Введите текст</string>
+    <string name="title_activity_2">Экран2</string>
+    <string name="first_fragment_label">1 фрагмент</string>
+    <string name="second_fragment_label">2 фрагмент</string>
+    <string name="next">Следующий</string>
+    <string name="previous">Предыдущий</string>
+    <string name="hello_first_fragment">Привет, это доп.экран</string>
+    <string name="hello_second_fragment">Привет, это второй доп экран</string>
 </resources>

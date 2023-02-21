@@ -1,6 +1,7 @@
 package com.example.myapplication2
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         val funLogs = Logs()
         val textView: TextView = findViewById(R.id.textHelloWorld)
         val edText: EditText = findViewById(R.id.editText1)
+        val buttonSecondScreen: View = findViewById(R.id.buttonNextActivity)
 
         button1.setOnClickListener {
             count--
@@ -58,6 +60,11 @@ class MainActivity : AppCompatActivity() {
             val dialog: AlertDialog = builderAlert.create()
             dialog.show()
             funLogs.button4Log(button4)
+        }
+//      кнопка перехода на второе активити используя intent
+        buttonSecondScreen.setOnClickListener {
+            val intent = Intent(this@MainActivity, Activity2::class.java)
+            startActivity(intent)
         }
     }
 }
