@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         }
 //      кнопка перехода на второе активити используя intent
         buttonSecondScreen.setOnClickListener {
-            val intent = Intent(this@MainActivity, Activity2::class.java)
+            val intent = Intent(this@MainActivity, SecondEmptyActivity::class.java)
             startActivity(intent)
         }
     }
