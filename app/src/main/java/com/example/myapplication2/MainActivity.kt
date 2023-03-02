@@ -27,6 +27,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val button1: View = findViewById(R.id.button1)
+        val button2: View = findViewById(R.id.button2)
+        val button3: View = findViewById(R.id.buttonReset)
+        val button4: View = findViewById(R.id.button4)
+        var count:Int=0
+        val funLogs = Logs()
+        val textView: TextView = findViewById(R.id.textHelloWorld)
+        val edText: EditText = findViewById(R.id.editText1)
+        val buttonSecondScreen: View = findViewById(R.id.buttonNextActivity)
+
         button1.setOnClickListener {
             count--
             textView.text = "нажато минус: число равно = $count"
