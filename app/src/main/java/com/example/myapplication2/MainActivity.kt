@@ -13,16 +13,6 @@ import androidx.appcompat.app.AlertDialog
 
 class MainActivity : AppCompatActivity() {
 
-    private val button1: View = findViewById(R.id.button1)
-    private val button2: View = findViewById(R.id.button2)
-    private val button3: View = findViewById(R.id.buttonReset)
-    private val button4: View = findViewById(R.id.button4)
-    private var count:Int=0
-    private val funLogs = Logs()
-    private val textView: TextView = findViewById(R.id.textHelloWorld)
-    private val edText: EditText = findViewById(R.id.editText1)
-    private val buttonSecondScreen: View = findViewById(R.id.buttonNextActivity)
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
