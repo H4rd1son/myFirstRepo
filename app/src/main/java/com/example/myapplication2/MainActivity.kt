@@ -9,40 +9,51 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.example.myapplication2.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
 
+    var count:Int=0
+    private val funLogs = Logs()
+    lateinit var bindingClass : ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        bindingClass = ActivityMainBinding.inflate(layoutInflater)
 
-        val button1: View = findViewById(R.id.button1)
-        val button2: View = findViewById(R.id.button2)
-        val button3: View = findViewById(R.id.buttonReset)
-        val button4: View = findViewById(R.id.button4)
-        var count:Int=0
-        val funLogs = Logs()
+//        setContentView(R.layout.activity_main)
+        setContentView(bindingClass.root)
+
+        val buttonMinus: View = findViewById(R.id.button1)
+        val buttonPlus: View = findViewById(R.id.button2)
+//        val buttonReset: View = findViewById(R.id.buttonReset)
+        val buttonEnter: View = findViewById(R.id.button4)
         val textView: TextView = findViewById(R.id.textHelloWorld)
         val edText: EditText = findViewById(R.id.editText1)
         val buttonSecondScreen: View = findViewById(R.id.buttonNextActivity)
 
-        button1.setOnClickListener {
+        buttonMinus.setOnClickListener {
             count--
             textView.text = "нажато минус: число равно = $count"
-            funLogs.button1Log(button1)
+            funLogs.button1Log(buttonMinus)
         }
-        button2.setOnClickListener {
+        buttonPlus.setOnClickListener {
             count++
             textView.text = "нажато плюс: число равно = $count"
-            funLogs.button2Log(button2)
+            funLogs.button2Log(buttonPlus)
         }
-        button3.setOnClickListener {
+        bindingClass.buttonReset.setOnClickListener {
+            count = 0
+            bindingClass.textHelloWorld.text = "нажат сброс: число равно = $count"
+            funLogs.button3Log(bindingClass.buttonReset)
+        }
+        /*buttonReset.setOnClickListener {
             count = 0
             textView.text = "нажат сброс: число равно = $count"
-            funLogs.button3Log(button3)
-        }
-        button4.setOnClickListener {
+            funLogs.button3Log(buttonReset)
+        }*/
+        buttonEnter.setOnClickListener {
             //AlertDialog
             val builderAlert = AlertDialog.Builder(this@MainActivity)
             builderAlert.setTitle("Заголовок")
@@ -59,7 +70,7 @@ class MainActivity : AppCompatActivity() {
             }
             val dialog: AlertDialog = builderAlert.create()
             dialog.show()
-            funLogs.button4Log(button4)
+            funLogs.button4Log(buttonEnter)
         }
 //      кнопка перехода на второе активити используя intent
         buttonSecondScreen.setOnClickListener {
