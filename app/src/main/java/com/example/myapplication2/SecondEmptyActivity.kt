@@ -39,7 +39,7 @@ class SecondEmptyActivity : AppCompatActivity() {
             else if (count in 0..100) {
                 bindingClass.textWhoAreYou.text = "у тебя до 100 подписчиков, вообще иди отсюда лох" //до 100 подписоты
             } else {
-                bindingClass.textWhoAreYou.text = "ВВЕДЕНЫ НЕВЕРНЫЕ ДАННЫЕ, ВВЕДИ ЧИСЛО" //до 100 подписоты
+                bindingClass.textWhoAreYou.text = "ВВЕДЕНЫ НЕВЕРНЫЕ ДАННЫЕ, ВВЕДИ ЧИСЛО" //ошибка не отрабатывает
             }
         }
 
