@@ -20,7 +20,6 @@ class SecondEmptyActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingClass = SecondEmptyActivityBinding.inflate(layoutInflater)
-//        setContentView(R.layout.second_empty_activity)
         setContentView(bindingClass.root)
 
         Log.d(TAG, "onCreate")
@@ -28,18 +27,23 @@ class SecondEmptyActivity : AppCompatActivity() {
         bindingClass.acceptNumberButton.setOnClickListener {
             val count = bindingClass.inputNumberField.getText().toString().toInt()
             if(count >= 1000) {
-                bindingClass.textWhoAreYou.text = "красава у тебя $count подписчиков, но ты всё равно лох" //если 1000 и больше подпсоты
+                val tempText = "красава у тебя $count подписчиков, но ты всё равно лох"
+                bindingClass.textWhoAreYou.text = tempText //если 1000 и больше подпсоты
             }
             else if(count in 500..999) {
-                bindingClass.textWhoAreYou.text = "ммм у тебя $count подписчиков, но ты всё равно лох" //если 500 до 1000
+                val tempText = "ммм у тебя $count подписчиков, но ты всё равно лох"
+                bindingClass.textWhoAreYou.text =  tempText//если 500 до 1000
             }
             else if(count in 100..499) {
-                bindingClass.textWhoAreYou.text = "у тебя больше 100 подписчиков, целых $count но ты лох" //от 100 и до 500
+                val tempText = "у тебя больше 100 подписчиков, целых $count но ты лох"
+                bindingClass.textWhoAreYou.text =  tempText//от 100 и до 500
             }
             else if (count in 0..100) {
-                bindingClass.textWhoAreYou.text = "у тебя до 100 подписчиков, вообще иди отсюда лох" //до 100 подписоты
+                val tempText = "у тебя до 100 подписчиков, вообще иди отсюда лох"
+                bindingClass.textWhoAreYou.text =  tempText//до 100 подписоты
             } else {
-                bindingClass.textWhoAreYou.text = "ВВЕДЕНЫ НЕВЕРНЫЕ ДАННЫЕ, ВВЕДИ ЧИСЛО" //ошибка не отрабатывает
+                val tempText = "ВВЕДЕНЫ НЕВЕРНЫЕ ДАННЫЕ, ВВЕДИ ЧИСЛО"
+                bindingClass.textWhoAreYou.text =  tempText//ошибка не отрабатывает
             }
         }
 
