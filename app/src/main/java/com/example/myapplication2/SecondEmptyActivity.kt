@@ -4,10 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.widget.*
-import androidx.appcompat.app.AlertDialog
-import com.example.myapplication2.databinding.ActivityMainBinding
 import com.example.myapplication2.databinding.SecondEmptyActivityBinding
 
 class SecondEmptyActivity : AppCompatActivity() {
@@ -49,6 +45,10 @@ class SecondEmptyActivity : AppCompatActivity() {
 
         bindingClass.buttonPreviousActivity.setOnClickListener {
             val intent = Intent(this@SecondEmptyActivity, MainActivity::class.java)
+            startActivity(intent)
+        }
+        bindingClass.buttonThirdScreen.setOnClickListener {
+            val intent = Intent(this@SecondEmptyActivity, SalaryActivity::class.java)
             startActivity(intent)
         }
 
