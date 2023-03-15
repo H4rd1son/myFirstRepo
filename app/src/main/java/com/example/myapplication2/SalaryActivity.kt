@@ -4,6 +4,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.myapplication2.constance.Constance
 import com.example.myapplication2.databinding.ActivitySalaryBinding
 
 class SalaryActivity : AppCompatActivity() {
@@ -19,19 +20,35 @@ class SalaryActivity : AppCompatActivity() {
             bindingClass.resultTextView.visibility = View.VISIBLE
             bindingClass.resultTextView.setTextColor(Color.GREEN)
             when(bindingClass.nameEditText.text.toString()) {
-                "Admin" -> bindingClass.resultTextView.setText(Constance.ADMIN_LOGIN)
-                "root" -> bindingClass.resultTextView.setText(Constance.ROOT_LOGIN)
-                "user" -> bindingClass.resultTextView.setText(Constance.USER_LOGIN)
+                Constance.ADMIN_LOGIN -> {
+                    bindingClass.resultTextView.text = if(bindingClass.passwdEditText.text.toString().toInt() == Constance.ADMIN_PASS)
+                    Constance.ADMIN_HELLO
+                    else {
+                        bindingClass.resultTextView.setTextColor(Color.parseColor("#F44336"))
+                        "Неверный логин или пароль"
+                    }
+                }
+                Constance.ROOT_LOGIN -> {
+                    if(bindingClass.passwdEditText.text.toString().toInt() == Constance.ROOT_PASS)
+                    bindingClass.resultTextView.text = Constance.ROOT_HELLO
+                    else {
+                        bindingClass.resultTextView.setTextColor(Color.parseColor("#F44336"))
+                        bindingClass.resultTextView.text = "Неверный логин или пароль"
+                    }
+                }
+                Constance.USER_LOGIN -> {
+                    if(bindingClass.passwdEditText.text.toString().toInt() == Constance.USER_PASS)
+                    bindingClass.resultTextView.text = Constance.USER_HELLO
+                    else {
+                        bindingClass.resultTextView.setTextColor(Color.parseColor("#F44336"))
+                        bindingClass.resultTextView.text = "Неверный логин или пароль"
+                    }
+                }
                 else -> {
                     bindingClass.resultTextView.setTextColor(Color.parseColor("#F44336"))
-                    bindingClass.resultTextView.setText("Неверный логин или пароль")
+                    bindingClass.resultTextView.text = "Неверный логин или пароль"
                 }
             }
         }
-    }
-    object Constance{
-        const val ADMIN_LOGIN = "Успешный логин. Приветсвую Admin"
-        const val ROOT_LOGIN = "Успешный логин. Приветсвую ROOT"
-        const val USER_LOGIN = "Успешный логин. Приветсвую User"
     }
 }
