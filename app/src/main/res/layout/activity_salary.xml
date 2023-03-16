@@ -62,12 +62,25 @@
         android:id="@+id/resultTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Успешный логин. Приветсвутю username"
+        android:text="Отображение успешности логина"
         android:textAlignment="center"
         android:textSize="24sp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/welcomeText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/allowImageView"
+        app:layout_constraintVertical_bias="0.00999999" />
+
+    <ImageView
+        android:id="@+id/allowImageView"
+        android:layout_width="170dp"
+        android:layout_height="169dp"
+        android:contentDescription="allowed_pick"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/me_ico" />
 </androidx.constraintlayout.widget.ConstraintLayout>
