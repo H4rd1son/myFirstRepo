@@ -73,6 +73,17 @@
         app:layout_constraintVertical_bias="0.00999999" />
 
     <ImageView
+        android:id="@+id/deniedImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="denied_pick"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultTextView"
+        app:srcCompat="@drawable/access_denied" />
+
+    <ImageView
         android:id="@+id/allowImageView"
         android:layout_width="170dp"
         android:layout_height="169dp"
@@ -83,4 +94,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/me_ico" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

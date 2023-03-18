@@ -19,49 +19,59 @@ class SalaryActivity : AppCompatActivity() {
         bindingClass.submitButton.setOnClickListener {
             bindingClass.resultTextView.visibility = View.VISIBLE
             bindingClass.resultTextView.setTextColor(Color.GREEN)
-//            accessCheck(Constance.ADMIN_LOGIN,Constance.ADMIN_PASS,Constance.ADMIN_HELLO)
             when(bindingClass.nameEditText.text.toString()) {
                 Constance.ADMIN_LOGIN -> {
-                    if(bindingClass.passwdEditText.text.toString().toInt() == Constance.ADMIN_PASS) {
+                    if(bindingClass.passwdEditText.text.toString() == Constance.ADMIN_PASS) {
                         bindingClass.resultTextView.text = Constance.ADMIN_HELLO
                             bindingClass.allowImageView.visibility = View.VISIBLE
+                            bindingClass.deniedImageView.visibility = View.GONE
                     }
                     else {
+                        bindingClass.allowImageView.visibility = View.GONE
+                        bindingClass.deniedImageView.visibility = View.VISIBLE
                         bindingClass.resultTextView.setTextColor(Color.parseColor("#F44336"))
                         bindingClass.resultTextView.text = "Неверный логин или пароль"
                     }
                 }
                 Constance.ROOT_LOGIN -> {
-                    if(bindingClass.passwdEditText.text.toString().toInt() == Constance.ROOT_PASS) {
+                    if(bindingClass.passwdEditText.text.toString() == Constance.ROOT_PASS) {
                     bindingClass.resultTextView.text = Constance.ROOT_HELLO
                         bindingClass.allowImageView.visibility = View.VISIBLE
+                        bindingClass.deniedImageView.visibility = View.GONE
                     }
                     else {
+                        bindingClass.allowImageView.visibility = View.GONE
+                        bindingClass.deniedImageView.visibility = View.VISIBLE
                         bindingClass.resultTextView.setTextColor(Color.parseColor("#F44336"))
                         bindingClass.resultTextView.text = "Неверный логин или пароль"
                     }
                 }
                 Constance.USER_LOGIN -> {
-                    if(bindingClass.passwdEditText.text.toString().toInt() == Constance.USER_PASS) {
+                    if(bindingClass.passwdEditText.text.toString() == Constance.USER_PASS) {
                     bindingClass.resultTextView.text = Constance.USER_HELLO
                         bindingClass.allowImageView.visibility = View.VISIBLE
+                        bindingClass.deniedImageView.visibility = View.GONE
                     }
                     else {
+                        bindingClass.allowImageView.visibility = View.GONE
+                        bindingClass.deniedImageView.visibility = View.VISIBLE
                         bindingClass.resultTextView.setTextColor(Color.parseColor("#F44336"))
                         bindingClass.resultTextView.text = "Неверный логин или пароль"
                     }
                 }
                 else -> {
+                    bindingClass.allowImageView.visibility = View.GONE
+                    bindingClass.deniedImageView.visibility = View.VISIBLE
                     bindingClass.resultTextView.setTextColor(Color.parseColor("#F44336"))
                     bindingClass.resultTextView.text = "Неверный логин или пароль"
                 }
             }
         }
     }
-    fun accessCheck(login:String, pass:Int, hello:String) {
+    fun accessCheck(login:String, pass:String, hello:String) {
         when (bindingClass.nameEditText.text.toString()) {
             login -> {
-                if (bindingClass.passwdEditText.text.toString().toInt() == pass) {
+                if (bindingClass.passwdEditText.text.toString() == pass) {
                     bindingClass.resultTextView.text = hello
                     bindingClass.allowImageView.visibility = View.VISIBLE
                 } else {
