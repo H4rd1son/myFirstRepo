@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Hardison App</string>
+    <string name="app_name">Самурай приложение</string>
     <string name="hello_world">Здесь будет ваш текст</string>
     <string name="button1">Минус</string>
     <string name="button2">Плюс</string>
@@ -15,4 +15,5 @@
     <string name="previous">Предыдущий</string>
     <string name="hello_first_fragment">Привет, это доп.экран</string>
     <string name="hello_second_fragment">Привет, это второй доп экран</string>
+    <string name="hello_blank_fragment">Это фрагмент для отображения утки</string>
 </resources>

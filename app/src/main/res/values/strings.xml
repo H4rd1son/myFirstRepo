@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Hardison App</string>
+    <string name="app_name">Samurai App</string>
     <string name="hello_world">Here you text</string>
     <string name="button1">Minus</string>
     <string name="button2">Plus</string>
@@ -13,9 +13,8 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Это фрагмент для отображения утки</string>
+    <string name="hello_blank_fragment">This dug fragment</string>
 </resources>
