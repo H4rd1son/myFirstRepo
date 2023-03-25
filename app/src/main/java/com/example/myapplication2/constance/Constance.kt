@@ -12,4 +12,5 @@ object Constance {
     const val ADMIN_HELLO = "Успешный логин. Приветсвую Admin"
     const val ROOT_HELLO = "Успешный логин. Приветсвую ROOT"
     const val USER_HELLO = "Успешный логин. Приветсвую User"
+    const val NEW_USER_HELLO = "Успешный логин. Новый юзер"
 }

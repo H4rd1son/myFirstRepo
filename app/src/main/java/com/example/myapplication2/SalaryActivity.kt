@@ -3,6 +3,7 @@ package com.example.myapplication2
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.View
 import android.widget.Button
 import com.example.myapplication2.constance.Constance
@@ -12,6 +13,8 @@ class SalaryActivity : AppCompatActivity() {
 
     private lateinit var bindingClass : ActivitySalaryBinding
     private val buttonsFunc = ButtonsFunc()
+    var newUserLogin = ""
+    var newUserPass = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +28,7 @@ class SalaryActivity : AppCompatActivity() {
                 Constance.ADMIN_LOGIN -> accessCheckIf(Constance.ADMIN_LOGIN,Constance.ADMIN_PASS, Constance.ADMIN_HELLO)
                 Constance.ROOT_LOGIN -> accessCheckIf(Constance.ROOT_LOGIN, Constance.ROOT_PASS, Constance.ROOT_HELLO)
                 Constance.USER_LOGIN -> accessCheckIf(Constance.USER_LOGIN, Constance.USER_PASS, Constance.USER_HELLO)
+                newUserLogin -> accessCheckIf(newUserLogin, newUserPass, Constance.NEW_USER_HELLO)
                 else -> {
                     bindingClass.allowImageView.visibility = View.GONE
                     bindingClass.deniedImageView.visibility = View.VISIBLE
@@ -32,6 +36,10 @@ class SalaryActivity : AppCompatActivity() {
                     bindingClass.resultTextView.text = "Неверный логин"
                 }
             }
+        }
+        bindingClass.registerButton.setOnClickListener {
+            newUserLogin = bindingClass.nameEditText.text.toString()
+            newUserPass = bindingClass.passwdEditText.text.toString()
         }
     }
     private fun accessCheckIf(login:String, pass:String, hello:String) {

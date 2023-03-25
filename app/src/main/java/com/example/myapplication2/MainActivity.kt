@@ -63,7 +63,14 @@ class MainActivity : AppCompatActivity() {
 //      кнопка перехода на второе активити используя intent
         bindingClass.buttonNextActivity.setOnClickListener {
             val intent = Intent(this@MainActivity, SecondEmptyActivity::class.java)
-            startActivity(intent)
+            startActivityForResult(intent, 1)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == 1 && data != null){
+            bindingClass.textViewYouText.text = data.getStringExtra("count")
         }
     }
 }
