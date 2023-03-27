@@ -21,14 +21,15 @@ class SalaryActivity : AppCompatActivity() {
         bindingClass = ActivitySalaryBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
 
+//        кнопка submit
         bindingClass.submitButton.setOnClickListener {
             bindingClass.resultTextView.visibility = View.VISIBLE
             bindingClass.resultTextView.setTextColor(Color.GREEN)
             when(bindingClass.nameEditText.text.toString()) {
-                Constance.ADMIN_LOGIN -> accessCheckIf(Constance.ADMIN_LOGIN,Constance.ADMIN_PASS, Constance.ADMIN_HELLO)
-                Constance.ROOT_LOGIN -> accessCheckIf(Constance.ROOT_LOGIN, Constance.ROOT_PASS, Constance.ROOT_HELLO)
-                Constance.USER_LOGIN -> accessCheckIf(Constance.USER_LOGIN, Constance.USER_PASS, Constance.USER_HELLO)
-                newUserLogin -> accessCheckIf(newUserLogin, newUserPass, Constance.NEW_USER_HELLO)
+                Constance.ADMIN_LOGIN -> buttonsFunc.accessCheck(bindingClass, Constance.ADMIN_LOGIN,Constance.ADMIN_PASS, Constance.ADMIN_HELLO)
+                Constance.ROOT_LOGIN -> buttonsFunc.accessCheck(bindingClass, Constance.ROOT_LOGIN, Constance.ROOT_PASS, Constance.ROOT_HELLO)
+                Constance.USER_LOGIN -> buttonsFunc.accessCheck(bindingClass, Constance.USER_LOGIN, Constance.USER_PASS, Constance.USER_HELLO)
+                newUserLogin -> buttonsFunc.accessCheck(bindingClass, newUserLogin, newUserPass, Constance.NEW_USER_HELLO)
                 else -> {
                     bindingClass.allowImageView.visibility = View.GONE
                     bindingClass.deniedImageView.visibility = View.VISIBLE
@@ -37,6 +38,7 @@ class SalaryActivity : AppCompatActivity() {
                 }
             }
         }
+//        кнопка регистрации
         bindingClass.registerButton.setOnClickListener {
             newUserLogin = bindingClass.nameEditText.text.toString()
             newUserPass = bindingClass.passwdEditText.text.toString()
