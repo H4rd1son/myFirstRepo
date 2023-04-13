@@ -8,6 +8,7 @@
     <string name="editText1">Enter text</string>
     <string name="buttonNextActivity">2nd screen</string>
     <string name="title_activity_2">Activity2</string>
+    <string name="buttonArrayActivity">Lists</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>

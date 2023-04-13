@@ -23,7 +23,7 @@ class SecondEmptyActivity : AppCompatActivity() {
 
         bindingClass.acceptNumberButton.setOnClickListener {
             val count = bindingClass.inputNumberField.getText().toString()
-            if (count == ""){
+            if (count == "") {
             val tempText = "ВВЕДЕНЫ НЕВЕРНЫЕ ДАННЫЕ, ВВЕДИ ЧИСЛО"
             bindingClass.textWhoAreYou.text =  tempText //validate string
             }

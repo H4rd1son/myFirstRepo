@@ -5,12 +5,15 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import com.example.myapplication2.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
-
+    var getContent : ActivityResultLauncher<Intent>? = null
     var count:Int=0
     private val funcLogs = Logs()
     lateinit var bindingClass : ActivityMainBinding
@@ -20,6 +23,14 @@ class MainActivity : AppCompatActivity() {
         bindingClass = ActivityMainBinding.inflate(layoutInflater)
 
         setContentView(bindingClass.root)
+
+        getContent = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
+            result: ActivityResult ->
+            if(result.resultCode == RESULT_OK){
+                val text = result.data?.getStringExtra("count")
+                bindingClass.textViewYouText.text = text
+            }
+        }
 
         bindingClass.buttonMinus.setOnClickListener {
             count--
@@ -62,15 +73,20 @@ class MainActivity : AppCompatActivity() {
 
 //      кнопка перехода на второе активити используя intent
         bindingClass.buttonNextActivity.setOnClickListener {
-            val intent = Intent(this@MainActivity, SecondEmptyActivity::class.java)
-            startActivityForResult(intent, 1)
+            getContent?.launch(Intent(this@MainActivity, SecondEmptyActivity::class.java))
+        }
+
+        //      кнопка перехода на второе активити используя intent
+        bindingClass.buttonArrayActivity.setOnClickListener {
+            val intent = Intent(this@MainActivity, ArrayActivity::class.java)
+            startActivity(intent)
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    /*override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode == 1 && data != null){
             bindingClass.textViewYouText.text = data.getStringExtra("count")
         }
-    }
+    }*/
 }

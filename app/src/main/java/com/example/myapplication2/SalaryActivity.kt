@@ -13,8 +13,10 @@ class SalaryActivity : AppCompatActivity() {
 
     private lateinit var bindingClass : ActivitySalaryBinding
     private val buttonsFunc = ButtonsFunc()
-    var newUserLogin = ""
-    var newUserPass = ""
+    private var newUserLogin: String = ""
+    private var newUserPass: String = ""
+    private var logins: Array<String> = arrayOf("admin", "user", "root")
+    private var passwords: Array<String> = arrayOf("admin", "user", "root")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +32,7 @@ class SalaryActivity : AppCompatActivity() {
                 Constance.ROOT_LOGIN -> buttonsFunc.accessCheck(bindingClass, Constance.ROOT_LOGIN, Constance.ROOT_PASS, Constance.ROOT_HELLO)
                 Constance.USER_LOGIN -> buttonsFunc.accessCheck(bindingClass, Constance.USER_LOGIN, Constance.USER_PASS, Constance.USER_HELLO)
                 newUserLogin -> buttonsFunc.accessCheck(bindingClass, newUserLogin, newUserPass, Constance.NEW_USER_HELLO)
+                logins[0] -> buttonsFunc.accessCheck(bindingClass, logins[0], passwords[0], "Login from array succsess")
                 else -> {
                     bindingClass.allowImageView.visibility = View.GONE
                     bindingClass.deniedImageView.visibility = View.VISIBLE
@@ -42,27 +45,6 @@ class SalaryActivity : AppCompatActivity() {
         bindingClass.registerButton.setOnClickListener {
             newUserLogin = bindingClass.nameEditText.text.toString()
             newUserPass = bindingClass.passwdEditText.text.toString()
-        }
-    }
-    private fun accessCheckIf(login:String, pass:String, hello:String) {
-        if (bindingClass.nameEditText.text.toString() == login) {
-                if (bindingClass.passwdEditText.text.toString() == pass) {
-                    bindingClass.resultTextView.text = hello
-                    bindingClass.allowImageView.visibility = View.VISIBLE
-                    bindingClass.deniedImageView.visibility = View.GONE
-                }
-                else {
-//                    bindingClass.allowImageView.setImageResource(R.drawable.access_denied)
-                    bindingClass.allowImageView.visibility = View.GONE
-                    bindingClass.deniedImageView.visibility = View.VISIBLE
-                    bindingClass.resultTextView.setTextColor(Color.parseColor("#F44336"))
-                    bindingClass.resultTextView.text = "Неверный пароль"
-                }
-        } else {
-            bindingClass.allowImageView.visibility = View.GONE
-            bindingClass.deniedImageView.visibility = View.VISIBLE
-            bindingClass.resultTextView.setTextColor(Color.parseColor("#F44336"))
-            bindingClass.resultTextView.text = "Неверный логин"
         }
     }
 }
