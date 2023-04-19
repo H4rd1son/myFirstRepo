@@ -9,6 +9,9 @@
     <string name="buttonNextActivity">2nd screen</string>
     <string name="title_activity_2">Activity2</string>
     <string name="buttonArrayActivity">Lists</string>
+    <string name="sync" translatable="false">Sync</string>
+    <string name="search" translatable="false">Search</string>
+    <string name="save" translatable="false">Save</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
