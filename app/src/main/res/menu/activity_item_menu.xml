@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="@string/second_screen"
+        android:id="@+id/second_screen"
+        android:icon="@drawable/ic_second_screen"
+        app:showAsAction="never"
+        android:orderInCategory="1"
+        />
+    <item
+        android:title="@string/third_screen"
+        android:id="@+id/third_screen"
+        android:icon="@drawable/ic_third_screen"
+        app:showAsAction="never"
+        android:orderInCategory="2"
+        />
+
+</menu>

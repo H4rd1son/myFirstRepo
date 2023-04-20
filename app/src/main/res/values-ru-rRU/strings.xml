@@ -10,8 +10,8 @@
     <string name="editText1">Введите текст</string>
     <string name="title_activity_2">Экран2</string>
     <string name="buttonArrayActivity">Массивы</string>
-    <string name="first_fragment_label">1 фрагмент</string>
-    <string name="second_fragment_label">2 фрагмент</string>
+    <string name="second_screen">Второй экран</string>
+    <string name="third_screen">Третий экран</string>
     <string name="next">Следующий</string>
     <string name="previous">Предыдущий</string>
     <string name="hello_first_fragment">Привет, это доп.экран</string>

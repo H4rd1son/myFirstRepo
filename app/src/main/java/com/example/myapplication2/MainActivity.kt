@@ -4,6 +4,8 @@ package com.example.myapplication2
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
@@ -81,6 +83,22 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, ArrayActivity::class.java)
             startActivity(intent)
         }
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.activity_item_menu, menu) //наполняем разметку меню с помощью menuInflater, указываем куда мы хотим поместить
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.second_screen -> {
+                getContent?.launch(Intent(this@MainActivity, SecondEmptyActivity::class.java))
+            }
+            R.id.third_screen -> {
+                getContent?.launch(Intent(this@MainActivity, SalaryActivity::class.java))
+            }
+        }
+        return true
     }
 
     /*override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
