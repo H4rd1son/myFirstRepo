@@ -11,9 +11,16 @@
     <item
         android:title="@string/third_screen"
         android:id="@+id/third_screen"
-        android:icon="@drawable/ic_third_screen"
+        android:icon="@drawable/baseline_filter_3_24"
         app:showAsAction="never"
         android:orderInCategory="2"
+        />
+    <item
+        android:title="@string/four_screen"
+        android:id="@+id/four_screen"
+        android:icon="@drawable/baseline_filter_4_24"
+        app:showAsAction="never"
+        android:orderInCategory="3"
         />
 
 </menu>

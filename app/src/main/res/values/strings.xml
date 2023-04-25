@@ -9,13 +9,20 @@
     <string name="buttonNextActivity">2nd screen</string>
     <string name="title_activity_2">Activity2</string>
     <string name="buttonArrayActivity">Lists</string>
+    <string name="menu">Menu</string>
+    <string name="subMenu">SubMenu</string>
     <!-- Buttons main_menu -->
     <string name="sync" translatable="false">Sync</string>
     <string name="search" translatable="false">Search</string>
     <string name="save" translatable="false">Save</string>
+    <!-- Buttons menu_navbar -->
+    <!-- Buttons nav_menu -->
+    <string name="category1">Category1</string>
+    <string name="item1" translatable="false">Item 1</string>
     <!-- Buttons second_empty_activity-->
     <string name="second_screen">Second screen</string>
     <string name="third_screen">Third Screen</string>
+    <string name="four_screen">Four Screen</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="hello_first_fragment">Hello first fragment</string>

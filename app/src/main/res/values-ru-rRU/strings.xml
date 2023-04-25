@@ -10,11 +10,15 @@
     <string name="editText1">Введите текст</string>
     <string name="title_activity_2">Экран2</string>
     <string name="buttonArrayActivity">Массивы</string>
+    <string name="category1">Категории1</string>
     <string name="second_screen">Второй экран</string>
     <string name="third_screen">Третий экран</string>
+    <string name="four_screen">Четвертый экран</string>
     <string name="next">Следующий</string>
     <string name="previous">Предыдущий</string>
     <string name="hello_first_fragment">Привет, это доп.экран</string>
     <string name="hello_second_fragment">Привет, это второй доп экран</string>
     <string name="hello_blank_fragment">Это фрагмент для отображения утки</string>
+    <string name="menu">Меню</string>
+    <string name="subMenu">Доп.меню</string>
 </resources>

@@ -83,6 +83,22 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, ArrayActivity::class.java)
             startActivity(intent)
         }
+/*      если нужно сменить первый выбранный элемент на другой
+        bindingClass.bNav.selectedItemId = R.id.third_screen*/
+        bindingClass.bNav.setOnItemSelectedListener {
+            when(it.itemId){
+                R.id.second_screen -> {
+                    getContent?.launch(Intent(this@MainActivity, SecondEmptyActivity::class.java))
+                }
+                R.id.third_screen -> {
+                    getContent?.launch(Intent(this@MainActivity, SalaryActivity::class.java))
+                }
+                R.id.four_screen -> {
+                    getContent?.launch(Intent(this@MainActivity, BottomNavigationViewActiivity::class.java))
+                }
+            }
+            true
+        }
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.activity_item_menu, menu) //наполняем разметку меню с помощью menuInflater, указываем куда мы хотим поместить
@@ -96,6 +112,9 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.third_screen -> {
                 getContent?.launch(Intent(this@MainActivity, SalaryActivity::class.java))
+            }
+            R.id.four_screen -> {
+                getContent?.launch(Intent(this@MainActivity, BottomNavigationViewActiivity::class.java))
             }
         }
         return true
