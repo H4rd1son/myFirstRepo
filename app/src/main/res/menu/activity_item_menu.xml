@@ -22,5 +22,12 @@
         app:showAsAction="never"
         android:orderInCategory="3"
         />
+    <item
+        android:title="@string/five_screen"
+        android:id="@+id/five_screen"
+        android:icon="@drawable/baseline_filter_5_24"
+        app:showAsAction="never"
+        android:orderInCategory="3"
+        />
 
 </menu>

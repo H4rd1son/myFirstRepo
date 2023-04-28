@@ -21,4 +21,6 @@
     <string name="hello_blank_fragment">Это фрагмент для отображения утки</string>
     <string name="menu">Меню</string>
     <string name="subMenu">Доп.меню</string>
+    <string name="five_screen">Пятый экран</string>
+    <string name="title_activity_fragment">Фрагмент</string>
 </resources>

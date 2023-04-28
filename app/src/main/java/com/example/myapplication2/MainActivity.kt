@@ -96,6 +96,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.four_screen -> {
                     getContent?.launch(Intent(this@MainActivity, BottomNavigationViewActiivity::class.java))
                 }
+                R.id.five_screen -> {
+                    getContent?.launch(Intent(this@MainActivity, Fragment::class.java))
+                }
             }
             true
         }
@@ -115,6 +118,9 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.four_screen -> {
                 getContent?.launch(Intent(this@MainActivity, BottomNavigationViewActiivity::class.java))
+            }
+            R.id.five_screen -> {
+                getContent?.launch(Intent(this@MainActivity, Fragment::class.java))
             }
         }
         return true
